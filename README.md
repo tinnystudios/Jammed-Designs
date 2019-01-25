@@ -1,8 +1,6 @@
 # Jammed-Designs
 
-## Concept: Title
-
-## Pitch
+## Concept
 Home renovation game where you build people dream homes in a limited time frame liked Overcooked.
 
 ## Setting
