@@ -9,8 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f96ffd8d5c066b43ac57c1224252a72, type: 3}
-  m_Name: Rug
+  m_Name: Coffee Table
   m_EditorClassIdentifier: 
-  ItemName: Rug
+  ItemName: Coffee Table
   BaseIcon: {fileID: 21300000, guid: 1c12506e4feb3164db5f7a63d0fe4300, type: 3}
   ItemVariants: []
