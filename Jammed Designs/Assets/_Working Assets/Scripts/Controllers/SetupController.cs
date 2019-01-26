@@ -37,8 +37,6 @@ public class SetupController : MonoBehaviour
 	
     private void SettingUpGame()
     {
-       
-
         StartCoroutine(DropItems());
     }
 
@@ -52,16 +50,18 @@ public class SetupController : MonoBehaviour
 
     private IEnumerator DropItems()
     {
+        AudioManager.Instance.PlayDomino();
+
         for (int i = 0; i < m_FloorTiles.Count; i++)
         {
             StartCoroutine(DropRoutine(m_FloorTiles[i], i, m_FloorTilesStartPos));
-            yield return new WaitForSeconds(5f / m_FloorTiles.Count);
+            yield return new WaitForSeconds(1f / m_FloorTiles.Count);
         }
 
         for (int i = 0; i < m_Walls.Count; i++)
         {
             StartCoroutine(DropRoutine(m_Walls[i], i, m_WallsStartPos));
-            yield return new WaitForSeconds(5f / m_FloorTiles.Count);
+            yield return new WaitForSeconds(2.5f / m_FloorTiles.Count);
         }
 
         StartGame();
