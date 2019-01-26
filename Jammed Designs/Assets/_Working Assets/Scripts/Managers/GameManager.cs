@@ -47,6 +47,9 @@ public class GameManager : MonoBehaviour
     {
         Started += StartGame;
 
+
+        GetComponent<ObjectiveManager>().Init();
+
         LoadScene("UI Overlay", LoadSceneMode.Additive);
         LoadScene("AudioManager", LoadSceneMode.Additive);
     }

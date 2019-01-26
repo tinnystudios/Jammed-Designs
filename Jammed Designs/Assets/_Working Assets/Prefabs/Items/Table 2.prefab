@@ -647,6 +647,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SenseValue: 3
   SensationEvoked: 0
+  TypeOfItem: 6
 --- !u!114 &114719203054103970
 MonoBehaviour:
   m_ObjectHideFlags: 1

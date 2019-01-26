@@ -1,0 +1,23 @@
+{
+  "FlavourText": "Example Text",
+  "ItemsToHave": [
+    {
+      "type": 0,
+      "Needed": 1
+    },
+    {
+      "type": 2,
+      "Needed": 2
+    }
+  ],
+  "TagCount": [
+    {
+      "sensation": 0,
+      "Needed": 5
+    },
+    {
+      "sensation": 3,
+      "Needed": 5
+    }
+  ]
+}
