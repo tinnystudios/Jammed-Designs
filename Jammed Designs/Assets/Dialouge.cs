@@ -21,11 +21,43 @@ public class Dialouge : SingletonMonoBehaviour<Dialouge>
 
         DialougeBox.Show();
         DialougeBox.SetText("");
-        yield return new WaitForSeconds(1);
-        yield return AnimateText("Hi I'm Miss Jam.");
-        yield return new WaitForSeconds(1);
-        yield return AnimateText("I just moved in recently and would love a clicky helping hand");
-        yield return new WaitForSeconds(2);
+
+        //Hacked this together, the Level script should contain the dialouge and not just the objective message
+        switch (LevelManager.Instance.Level)
+        {
+            case 1:
+                yield return new WaitForSeconds(1);
+                yield return AnimateText("Hi I'm Miss Jam.");
+                yield return new WaitForSeconds(1);
+                yield return AnimateText("I just moved in recently and would love a clicky helping hand");
+                yield return new WaitForSeconds(2);
+                break;
+
+            case 2:
+                yield return new WaitForSeconds(1);
+                yield return AnimateText("Wow! You were fantastic!");
+                yield return new WaitForSeconds(1);
+                yield return AnimateText("Can I ask you for another favor?");
+                yield return new WaitForSeconds(2);
+                break;
+
+            case 3:
+                yield return new WaitForSeconds(1);
+                yield return AnimateText("Hmmm, that was okay");
+                yield return new WaitForSeconds(1);
+                yield return AnimateText("Honestly, I think...");
+                yield return new WaitForSeconds(2);
+                break;
+
+            case 4:
+                yield return new WaitForSeconds(1);
+                yield return AnimateText("I've got a riddle for you");
+                yield return new WaitForSeconds(2);
+                break;
+        }
+
+
+
         yield return AnimateText(LevelManager.Instance.CurrentLevel.ObjectiveMessage);
         yield return new WaitForSeconds(3);
         DialougeBox.Hide();

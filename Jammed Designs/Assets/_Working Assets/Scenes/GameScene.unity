@@ -90,7 +90,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1157,6 +1157,26 @@ Prefab:
     - target: {fileID: 4606206228536618, guid: 3546ff64178d01148b6af31ed480b3a9, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114568764474958630, guid: 3546ff64178d01148b6af31ed480b3a9,
+        type: 2}
+      propertyPath: ObjectiveMessage
+      value: Can you build me a warm and fuzzy home?
+      objectReference: {fileID: 0}
+    - target: {fileID: 114557405124771672, guid: 3546ff64178d01148b6af31ed480b3a9,
+        type: 2}
+      propertyPath: ObjectiveMessage
+      value: It would be very kind of you to help me prepare for Summer.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114064452695764498, guid: 3546ff64178d01148b6af31ed480b3a9,
+        type: 2}
+      propertyPath: ObjectiveMessage
+      value: Nostalgia
+      objectReference: {fileID: 0}
+    - target: {fileID: 114961548421863054, guid: 3546ff64178d01148b6af31ed480b3a9,
+        type: 2}
+      propertyPath: ObjectiveMessage
+      value: You were a little Rusty.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3546ff64178d01148b6af31ed480b3a9, type: 2}
