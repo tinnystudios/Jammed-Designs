@@ -68,13 +68,14 @@ public class ToolBarItem : MonoBehaviour
 
         // #TODO Refactor after merging
         Destroy(_gridHighlighter.gameObject);
-        Destroy(ghost.gameObject);
+        Destroy(ghost);
     }
 
     public void Update()
     {
         if(Input.GetKeyDown(KeyCode.R))
         {
+            if(_gridHighlighter != null)
             _gridHighlighter.transform.eulerAngles += new Vector3(0, 90, 0);
         }
 
@@ -96,8 +97,8 @@ public class ToolBarItem : MonoBehaviour
         _gridHighlighter.transform.rotation = itemPrefabZoneSensor.transform.rotation;
         _gridHighlighter.transform.localScale = itemPrefabZoneSensor.transform.localScale;
 
-
-        ghost = Instantiate(ItemPrefab.gameObject, _gridHighlighter.transform.position, Quaternion.identity);
+        ghost = Instantiate(ItemPrefab.gameObject, _gridHighlighter.transform.position, _gridHighlighter.transform.rotation);
+        //remove the highligheter from the ghost
 
         _gridHighlighter.gameObject.SetActive(true);
     }
@@ -116,8 +117,8 @@ public class ToolBarItem : MonoBehaviour
             _selectedGridNode = gridNode;
             _gridHighlighter.IsValid = gridNode.Usable;
             _gridHighlighter.transform.position = gridNode.Center.position;
-            //Set size
 
+            var itemPrefabZoneSensor = ItemPrefab.GetComponentInChildren<GridZoneSensor>(includeInactive: true);
 
             if (gridNode.Usable)
             {
