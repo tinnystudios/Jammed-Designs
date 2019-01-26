@@ -171,14 +171,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2f790d5713f704d9d2e6ea13179642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectiveMessage: What is really home to you?
+  ObjectiveMessage: Quickly travel back in time!
+  TimeLimit: 40
   LevelRequirement:
-    TimeLimit: 90
     Cold: 0
     Warm: 0
     Rustic: 0
     Modern: 0
-    Retro: 0
+    Retro: 1
     Futuristic: 0
 --- !u!114 &114217040323299862
 MonoBehaviour:
@@ -205,8 +205,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObjectiveMessage: I'd like to be prepared for Summer
+  TimeLimit: 75
   LevelRequirement:
-    TimeLimit: 90
     Cold: -1
     Warm: 0
     Rustic: 0
@@ -224,9 +224,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2f790d5713f704d9d2e6ea13179642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectiveMessage: I like to be Warm and Fuzzy
+  ObjectiveMessage: Can you build me a warm and fuzzy home
+  TimeLimit: 90
   LevelRequirement:
-    TimeLimit: 90
     Cold: 1
     Warm: 0
     Rustic: 0
@@ -245,11 +245,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObjectiveMessage: You've been amazing! I'm digging a Future Rustic theme today..!
+  TimeLimit: 60
   LevelRequirement:
-    TimeLimit: 90
     Cold: 0
     Warm: 0
-    Rustic: 0
+    Rustic: 1
     Modern: 0
     Retro: 0
-    Futuristic: 0
+    Futuristic: 1

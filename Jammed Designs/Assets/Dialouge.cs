@@ -22,23 +22,18 @@ public class Dialouge : SingletonMonoBehaviour<Dialouge>
         DialougeBox.Show();
         DialougeBox.SetText("");
         yield return new WaitForSeconds(1);
-
-        AudioManager.Instance.PlayTyping();
-
-        yield return AnimateText("Hi I'm Miss Jam");
+        yield return AnimateText("Hi I'm Miss Jam.");
         yield return new WaitForSeconds(1);
         yield return AnimateText("I just moved in recently and would love a clicky helping hand");
         yield return new WaitForSeconds(2);
-
-        AudioManager.Instance.PlayTyping();
-
         yield return AnimateText(LevelManager.Instance.CurrentLevel.ObjectiveMessage);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         DialougeBox.Hide();
     }
 
     private IEnumerator AnimateText(string text)
     {
+        AudioManager.Instance.PlayTyping();
 
         string currentText = "";
 

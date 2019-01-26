@@ -6,6 +6,14 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
 {
     public Level CurrentLevel;
 
+    public int Level
+    {
+        get
+        {
+            return _currentLevelIndex + 1;
+        }
+    }
+
     protected override void Awake()
     {
         base.Awake();
