@@ -13,4 +13,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Coffee Table
   BaseIcon: {fileID: 21300000, guid: 1c12506e4feb3164db5f7a63d0fe4300, type: 3}
-  ItemVariants: []
+  ItemVariants:
+  - ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: 73704cecb7b15254199fcab216863b10, type: 3}
+    ItemPrefab: {fileID: 114653208968892260, guid: 2511d92f243ca47438fb2268d6469181,
+      type: 2}
+  - ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: e187f6018cf41cc459072a493ff60de5, type: 3}
+    ItemPrefab: {fileID: 114043500564888988, guid: 41b6e8f787853ee47b5cf6b0b0232430,
+      type: 2}
+  - ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: e04cf662f08e5da45acd95996a6365ad, type: 3}
+    ItemPrefab: {fileID: 114365288004089596, guid: e2cd7f51eeab84c4c87bc8a9029b5dca,
+      type: 2}
+  - ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: dcfdad08b3bd0854daeb48a7cde0b28d, type: 3}
+    ItemPrefab: {fileID: 114866377289192904, guid: b6190266f7b177546ba156a1d3dba542,
+      type: 2}
+  - ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: bcb8b34dca1c5f345b9efef35255d5eb, type: 3}
+    ItemPrefab: {fileID: 114125732122804320, guid: f36b6ee9a73815543b994b7ddeece84c,
+      type: 2}
+  - ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: 25a65975060c7314f97169d53e3bd1ac, type: 3}
+    ItemPrefab: {fileID: 114637868646790240, guid: c5ad49b1452ca0146974ff8d017d8936,
+      type: 2}

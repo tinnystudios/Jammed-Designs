@@ -11,14 +11,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f96ffd8d5c066b43ac57c1224252a72, type: 3}
   m_Name: Table
   m_EditorClassIdentifier: 
-  ItemName: Table
+  ItemName: Dining Table
   BaseIcon: {fileID: 21300000, guid: 1c12506e4feb3164db5f7a63d0fe4300, type: 3}
   ItemVariants:
   - ItemDescription: 
-    ItemSprite: {fileID: 21300000, guid: 75bd21a2657dd614cbd745686ed49602, type: 3}
-    ItemPrefab: {fileID: 114038284638390246, guid: 0c03936a8deeaed43929a2dbbc220562,
+    ItemSprite: {fileID: 21300000, guid: f0e4b40d8eac7174caa3b6b876502483, type: 3}
+    ItemPrefab: {fileID: 114583510935831384, guid: f9260c34b71c9c64b9cce4258484b56a,
       type: 2}
   - ItemDescription: 
-    ItemSprite: {fileID: 21300000, guid: e11780384b6eeb746b9fc45b28ba6d91, type: 3}
-    ItemPrefab: {fileID: 114719203054103970, guid: cedb26d8c9f2ef048b4819b66daebfbe,
+    ItemSprite: {fileID: 21300000, guid: 01170f3febebbcb43903068452e4195c, type: 3}
+    ItemPrefab: {fileID: 114914549576009140, guid: 3116b7a4dba49264fabcf26831c2e9d2,
+      type: 2}
+  - ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: b4f48455898ef0d4b94689ea6d2d521e, type: 3}
+    ItemPrefab: {fileID: 114004606585914052, guid: c7518ef8af6c0f34fbe65c345019b6e6,
+      type: 2}
+  - ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: 4675c05426c69074ab8e0315f377c77d, type: 3}
+    ItemPrefab: {fileID: 114115191779351414, guid: 95414f217ea010144bd1f400fd0eb7a2,
+      type: 2}
+  - ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: c4008e249f3aa3646872f477ce09e5b8, type: 3}
+    ItemPrefab: {fileID: 114717039218007948, guid: 23834893b448d6b459d6c1b633f64833,
+      type: 2}
+  - ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: 2c1dc1d281a26194a8585c8de9a2cbd3, type: 3}
+    ItemPrefab: {fileID: 114292554998646636, guid: 95d1bbdcc2b6b3e469502d476c28f48e,
       type: 2}

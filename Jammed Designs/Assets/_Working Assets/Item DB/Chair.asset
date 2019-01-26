@@ -15,10 +15,26 @@ MonoBehaviour:
   BaseIcon: {fileID: 21300000, guid: 1c12506e4feb3164db5f7a63d0fe4300, type: 3}
   ItemVariants:
   - ItemDescription: 
-    ItemSprite: {fileID: 21300000, guid: e6d35707a8b3a4544825d9319addf92f, type: 3}
-    ItemPrefab: {fileID: 114055462023415032, guid: 1ccf6d5ec3f03894c8d9dbdf2000a812,
+    ItemSprite: {fileID: 21300000, guid: c6cb5fc401d4b784597a97a177ae8a7a, type: 3}
+    ItemPrefab: {fileID: 114062948802060824, guid: e38b87171b9a9dd4280c033551e2de4b,
       type: 2}
   - ItemDescription: 
-    ItemSprite: {fileID: 21300000, guid: e6d35707a8b3a4544825d9319addf92f, type: 3}
-    ItemPrefab: {fileID: 114597006858572104, guid: 3723bfcec9a079648874c9187ef7eca1,
+    ItemSprite: {fileID: 21300000, guid: 10a2710d235d84b4fb2d5ec4addad538, type: 3}
+    ItemPrefab: {fileID: 114539911997661686, guid: e6de2029570252344b2694db1f2ff561,
+      type: 2}
+  - ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: 27af451eabcdc4b47be15ebb1aceccb7, type: 3}
+    ItemPrefab: {fileID: 114568726618096956, guid: 043cb16bf52d3454eb04b6c919b67a27,
+      type: 2}
+  - ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: c3cd76e7eb1cae9408f143f4238f24da, type: 3}
+    ItemPrefab: {fileID: 114484787932194106, guid: 3dac756ac7920fa4d9a7812c337d3676,
+      type: 2}
+  - ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: f4f278445ff95e943b1f84e22fa0626f, type: 3}
+    ItemPrefab: {fileID: 114296724924284722, guid: 93ebfe993b8aa6645a083a0a211b6e5f,
+      type: 2}
+  - ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: c96ed2a7dd456c44f9f4a9d00c11a167, type: 3}
+    ItemPrefab: {fileID: 114121543400762292, guid: 9efbc11da5a8cd349b75767d501e4f78,
       type: 2}
