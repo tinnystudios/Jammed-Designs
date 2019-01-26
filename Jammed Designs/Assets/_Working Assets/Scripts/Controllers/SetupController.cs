@@ -10,10 +10,14 @@ public class SetupController : MonoBehaviour
     [SerializeField] private List<GameObject> m_Walls;
     private List<Vector3> m_WallsStartPos;
     [SerializeField] private AnimationCurve m_DropCurve;
+    public Character Character;
 
     // Use this for initialization
     void Start ()
     {
+        Character.gameObject.SetActive(false);
+        Dialouge.Instance.Hide();
+
         GameManager.Instance.SettingUp += SettingUpGame;
         m_FloorTilesStartPos = new List<Vector3>();
         m_WallsStartPos = new List<Vector3>();
@@ -64,6 +68,13 @@ public class SetupController : MonoBehaviour
             yield return new WaitForSeconds(2.5f / m_FloorTiles.Count);
         }
 
+        yield return RunDialouge();
+    }
+
+    private IEnumerator RunDialouge()
+    {
+        Character.gameObject.SetActive(true);
+        yield return Dialouge.Instance.Run();
         StartGame();
     }
 

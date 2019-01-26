@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class AudioManager : SingletonMonoBehaviour<AudioManager>
 {
@@ -6,8 +8,27 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
     public AudioClip ClickClip;
     public AudioClip ErrorClip;
     public AudioClip DominoClip;
+    public AudioClip TypingClip;
 
     public AudioSource EffectSource;
+    public AudioSource TickTock;
+    public AnimationCurve TickTockCurve;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        GameManager.Instance.Started += OnStarted;
+    }
+
+    private void Update()
+    {
+        TickTock.volume = TickTockCurve.Evaluate(GameManager.Instance.NormalizedTime);
+    }
+
+    private void OnStarted()
+    {
+        TickTock.Play();
+    }
 
     public void PlaySelect()
     {
@@ -30,5 +51,10 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
     public void PlayDomino()
     {
         EffectSource.PlayOneShot(DominoClip);
+    }
+
+    public void PlayTyping()
+    {
+        EffectSource.PlayOneShot(TypingClip);
     }
 }

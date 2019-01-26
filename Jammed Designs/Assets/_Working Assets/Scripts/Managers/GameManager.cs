@@ -37,6 +37,14 @@ public class GameManager : MonoBehaviour
     public GameStarted Started;
     public GameEnded Ended;
 
+    public float TimeRemaining
+    {
+        get
+        {
+            return MaxTime - elapsedTime;
+        }
+    }
+
     private void Awake()
     {
         Instance = this;
@@ -49,9 +57,7 @@ public class GameManager : MonoBehaviour
 
         GetComponent<ObjectiveManager>().Init();
 
-#if !UNITY_EDITOR
         LoadScene("UI Overlay", LoadSceneMode.Additive);
-#endif
         LoadScene("AudioManager", LoadSceneMode.Additive);
     }
 
@@ -62,6 +68,11 @@ public class GameManager : MonoBehaviour
         {
             SetupGame();
         }
+
+        if (Input.GetKey(KeyCode.T))
+            Time.timeScale = 10;
+        else
+            Time.timeScale = 1;
     }
 
     public void SetupGame()
@@ -94,7 +105,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator CountdownRoutine()
     {
-        float elapsedTime = 0;
+        elapsedTime = 0;
 
         while (elapsedTime < MaxTime)
         {
@@ -130,4 +141,6 @@ public class GameManager : MonoBehaviour
         }
 
     }
+
+    private float elapsedTime;
 }

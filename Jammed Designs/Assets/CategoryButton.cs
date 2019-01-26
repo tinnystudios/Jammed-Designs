@@ -17,12 +17,12 @@ public class CategoryButton : MonoBehaviour, IPointerClickHandler
 
     public void InActive()
     {
-        CategoryButtonGroup.alpha = 0.3F;
+        CategoryButtonGroup.alpha = 0.5F;
     }
 
     public void Active()
     {
-        CategoryButtonGroup.alpha = 0.6F;
+        CategoryButtonGroup.alpha = 0.8F;
     }
 
     public void SetTitle(string title)
