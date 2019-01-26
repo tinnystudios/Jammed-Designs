@@ -1203,6 +1203,7 @@ GameObject:
   - component: {fileID: 222703880864361034}
   - component: {fileID: 114877730686866070}
   - component: {fileID: 114558603961275946}
+  - component: {fileID: 114051993666100646}
   m_Layer: 0
   m_Name: Retry btn
   m_TagString: Untagged
@@ -1255,6 +1256,7 @@ GameObject:
   - component: {fileID: 222281360304588790}
   - component: {fileID: 114797412822880656}
   - component: {fileID: 114322598292781152}
+  - component: {fileID: 114083776851268200}
   m_Layer: 0
   m_Name: continueBTn
   m_TagString: Untagged
@@ -1429,8 +1431,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114672506787585420}
   m_HandleRect: {fileID: 224622759768062342}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.6415054
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1481,6 +1483,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114051993666100646
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1918459174561962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b57e7bb06db2d114aaceb6535ef10844, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114059912225816434
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1522,6 +1535,17 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114083776851268200
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1977069782593788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c81452a1574282c49b9510e552f641f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114105802172868240
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4582,7 +4606,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114764373000477372}
   m_HandleRect: {fileID: 224292337030830160}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -5593,7 +5617,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000030517578, y: -0.000019073486}
+  m_AnchoredPosition: {x: 0.000022888184, y: 0.0000038146973}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224426866149340894
@@ -5969,7 +5993,7 @@ RectTransform:
   m_Father: {fileID: 224918427087677368}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.35849458}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 4.9999995}
   m_SizeDelta: {x: 20, y: 9.999999}

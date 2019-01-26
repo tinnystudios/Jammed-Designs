@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        MaxTime = LevelManager.Instance.CurrentLevel.TimeLimit;
     }
 
     // Use this for initialization
@@ -140,6 +141,11 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
 
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
     }
 
     private float elapsedTime;

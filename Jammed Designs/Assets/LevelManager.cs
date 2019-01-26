@@ -6,6 +6,41 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
 {
     public Level CurrentLevel;
 
+    protected override void Awake()
+    {
+        base.Awake();
+
+        GetComponentsInChildren(_levels);
+    }
+
+    public void RetryLevel()
+    {
+        GameManager.Instance.Restart();
+    }
+
+    public void NextLevel()
+    {
+        GameManager.Instance.Restart();
+    }
+
+    public void IncreaseLevel()
+    {
+        _currentLevelIndex++;
+
+        if (_currentLevelIndex >= _levels.Count - 1)
+        {
+            AllLevelsCleared();
+            _currentLevelIndex = _levels.Count - 1;
+        }
+
+        CurrentLevel = _levels[_currentLevelIndex];
+    }
+
+    public void AllLevelsCleared()
+    {
+        //Get Game Manager to player some completion thing and thank the player!
+    }
+
     public bool IsLevelSuccess(float coldWarm, float rusticModern, float retroFuturistic)
     {
         var currentLevelRequirement = CurrentLevel.LevelRequirement;
@@ -60,10 +95,7 @@ public class LevelManager : SingletonMonoBehaviour<LevelManager>
             return true;
         }
     }
-}
 
-/*
-ScoreManager.Instance.MakeSlider((int)(warm_cold.x - warm_cold.y), "Cold -- Warm");
-        ScoreManager.Instance.MakeSlider((int)(modern_rustic.x - modern_rustic.y), "Rustic -- Modern");
-        ScoreManager.Instance.MakeSlider((int)(futuristic_retro.x - futuristic_retro.y), "Retro -- Futuristic");
-        */
+    private List<Level> _levels = new List<Level>();
+    private int _currentLevelIndex = 0;
+}

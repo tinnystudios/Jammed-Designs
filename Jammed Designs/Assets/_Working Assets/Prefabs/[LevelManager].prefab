@@ -173,6 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectiveMessage: What is really home to you?
   LevelRequirement:
+    TimeLimit: 90
     Cold: 0
     Warm: 0
     Rustic: 0
@@ -190,6 +191,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 588abe5af4bdb3c44a6f2ed7217f86aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DontDestroyObjectOnLoad: 1
+  CurrentLevel: {fileID: 114568764474958630}
 --- !u!114 &114557405124771672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -203,6 +206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectiveMessage: I'd like to be prepared for Summer
   LevelRequirement:
+    TimeLimit: 90
     Cold: -1
     Warm: 0
     Rustic: 0
@@ -222,8 +226,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectiveMessage: I like to be Warm and Fuzzy
   LevelRequirement:
-    Cold: 0
-    Warm: 1
+    TimeLimit: 90
+    Cold: 1
+    Warm: 0
     Rustic: 0
     Modern: 0
     Retro: 0
@@ -241,6 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectiveMessage: You've been amazing! I'm digging a Future Rustic theme today..!
   LevelRequirement:
+    TimeLimit: 90
     Cold: 0
     Warm: 0
     Rustic: 0

@@ -93,6 +93,8 @@ public class EndController : MonoBehaviour
         var success = LevelManager.Instance.IsLevelSuccess(coldWarm, modernRustic, futuristicRetro);
         Debug.Log("Success : " + success);
 
+        LevelManager.Instance.IncreaseLevel();
+
         foreach (var item in ObjectiveManager.Instance.curObjective.ItemsToHave)
         {
             int curCount = 0, numWanted = 0;

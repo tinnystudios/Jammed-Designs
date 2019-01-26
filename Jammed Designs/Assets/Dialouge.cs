@@ -32,7 +32,7 @@ public class Dialouge : SingletonMonoBehaviour<Dialouge>
 
         AudioManager.Instance.PlayTyping();
 
-        yield return AnimateText("Something warm and fuzzy");
+        yield return AnimateText(LevelManager.Instance.CurrentLevel.ObjectiveMessage);
         yield return new WaitForSeconds(2);
         DialougeBox.Hide();
     }

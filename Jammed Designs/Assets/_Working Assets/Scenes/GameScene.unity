@@ -1201,20 +1201,20 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114217040323299862, guid: 3546ff64178d01148b6af31ed480b3a9,
-        type: 2}
-      propertyPath: CurrentLevel
-      value: 
-      objectReference: {fileID: 1510224279}
     - target: {fileID: 114568764474958630, guid: 3546ff64178d01148b6af31ed480b3a9,
         type: 2}
-      propertyPath: LevelRequirement.Warm
-      value: 0
+      propertyPath: TimeLimit
+      value: 20
       objectReference: {fileID: 0}
-    - target: {fileID: 114568764474958630, guid: 3546ff64178d01148b6af31ed480b3a9,
+    - target: {fileID: 114064452695764498, guid: 3546ff64178d01148b6af31ed480b3a9,
         type: 2}
-      propertyPath: LevelRequirement.Cold
-      value: 1
+      propertyPath: TimeLimit
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114961548421863054, guid: 3546ff64178d01148b6af31ed480b3a9,
+        type: 2}
+      propertyPath: TimeLimit
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3546ff64178d01148b6af31ed480b3a9, type: 2}
@@ -1526,12 +1526,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad11ba74b19f3484897f9bf20c32dd31, type: 2}
   m_IsPrefabAsset: 0
---- !u!114 &1510224279 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114568764474958630, guid: 3546ff64178d01148b6af31ed480b3a9,
-    type: 2}
-  m_PrefabInternal: {fileID: 1244965311}
-  m_Script: {fileID: 11500000, guid: 0a2f790d5713f704d9d2e6ea13179642, type: 3}
 --- !u!1001 &1524388392
 Prefab:
   m_ObjectHideFlags: 0
