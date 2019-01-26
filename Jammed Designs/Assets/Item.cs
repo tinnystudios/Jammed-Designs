@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 
-public class Item : MonoBehaviour
+namespace JammedDesigns.Model
 {
+    public class Item : MonoBehaviour
+    {
 
+    }
 }

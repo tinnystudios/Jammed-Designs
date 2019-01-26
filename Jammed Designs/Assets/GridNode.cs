@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using JammedDesigns.Model;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -12,6 +13,11 @@ public class GridNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public Color InvalidColor = Color.red;
     public Color HighlightColor = Color.blue;
     public Color DefaultColor = Color.white;
+
+    void OnValidate()
+    {
+        Center = transform;
+    }
 
     public bool Usable
     {
