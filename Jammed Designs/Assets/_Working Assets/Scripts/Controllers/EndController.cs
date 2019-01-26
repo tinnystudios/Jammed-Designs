@@ -88,12 +88,13 @@ public class EndController : MonoBehaviour
         var modernRustic =(modern_rustic.x - modern_rustic.y) / 10;
         var futuristicRetro = (futuristic_retro.x - futuristic_retro.y) / 10;
 
-        Debug.Log("Cold-Warm : " + coldWarm);
-
         var success = LevelManager.Instance.IsLevelSuccess(coldWarm, modernRustic, futuristicRetro);
         Debug.Log("Success : " + success);
 
-        LevelManager.Instance.IncreaseLevel();
+        ScoreManager.Instance.UpdateNextMenuBoard(success);
+
+        if(success)
+            LevelManager.Instance.IncreaseLevel();
 
         foreach (var item in ObjectiveManager.Instance.curObjective.ItemsToHave)
         {

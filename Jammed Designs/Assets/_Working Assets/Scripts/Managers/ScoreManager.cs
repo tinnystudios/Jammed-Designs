@@ -11,6 +11,11 @@ public class ScoreManager : MonoBehaviour
     public GameObject CheckboxPrefab;
     public Transform SliderParent, CheckboxParent;
 
+    //All below should be In ScoreMenuBoardUI, oh well D:
+    public TextMeshProUGUI LevelClearText;
+    public TextMeshProUGUI CommentText;
+    public List<GameObject> Stars;
+    public GameObject NextButton;
 
     private void Awake()
     {
@@ -43,5 +48,74 @@ public class ScoreManager : MonoBehaviour
         {
             go.GetComponentInChildren<Toggle>().isOn = false;
         }
+    }
+
+    //1Star fail, 2Stars pass, 3Stars perfect!
+    //Get score and leave different comments and stars for it.
+    public void UpdateNextMenuBoard(bool isCompleted)
+    {
+        foreach (var star in Stars)
+        {
+            star.SetActive(false);
+        }
+
+        //The comments should be in the Level script.
+        string comment = "";
+
+        if (isCompleted)
+        {
+            switch (LevelManager.Instance.Level)
+            {
+                case 1:
+                    comment = "Homey";
+                    break;
+
+                case 2:
+                    comment = "Brrrrrrrr";
+                    break;
+
+                case 3:
+                    comment = "Very Rustic";
+                    break;
+
+                case 4:
+                    comment = "Fin";
+                    break;
+            }
+
+            foreach (var star in Stars)
+            {
+                star.SetActive(true);
+            }
+
+            LevelClearText.text = string.Format("LEVEL {0} CLEARED!", LevelManager.Instance.Level);
+        }
+        else
+        {
+            switch (LevelManager.Instance.Level)
+            {
+                case 1:
+                    comment = "I just want warm orangey things...";
+                    break;
+
+                case 2:
+                    comment = "What color does Winter remind you off?";
+                    break;
+
+                case 3:
+                    comment = "Once again, Good Luck!";
+                    break;
+
+                case 4:
+                    comment = "I'm honestly out of comments";
+                    break;
+            }
+
+            Stars[0].SetActive(true);
+            LevelClearText.text = string.Format("LEVEL {0} FAILED...", LevelManager.Instance.Level);
+        }
+
+        CommentText.text = comment;
+        NextButton.SetActive(isCompleted);
     }
 }
