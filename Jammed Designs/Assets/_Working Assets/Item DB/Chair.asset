@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Chair
   m_EditorClassIdentifier: 
   ItemName: Chair
-  BaseIcon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  BaseIcon: {fileID: 21300000, guid: 1c12506e4feb3164db5f7a63d0fe4300, type: 3}
   ItemVariants:
   - ItemDescription: 
     ItemSprite: {fileID: 21300000, guid: e6d35707a8b3a4544825d9319addf92f, type: 3}

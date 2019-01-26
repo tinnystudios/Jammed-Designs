@@ -47,10 +47,11 @@ public class GameManager : MonoBehaviour
     {
         Started += StartGame;
 
-
         GetComponent<ObjectiveManager>().Init();
 
+#if !UNITY_EDITOR
         LoadScene("UI Overlay", LoadSceneMode.Additive);
+#endif
         LoadScene("AudioManager", LoadSceneMode.Additive);
     }
 

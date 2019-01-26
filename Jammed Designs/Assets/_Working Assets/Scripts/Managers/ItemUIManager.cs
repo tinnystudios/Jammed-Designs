@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ItemUIManager : MonoBehaviour {
 
     [SerializeField] private List<HouseItem> m_AllItemCategories;
+    private Dictionary<HouseItem, CategoryButton> m_CategoryLookUp = new Dictionary<HouseItem, CategoryButton>();
 
     [Header("Button Vars:")]
     [SerializeField] private GameObject m_CatButtonPrefab;
@@ -27,15 +28,29 @@ public class ItemUIManager : MonoBehaviour {
         {
             var go = Instantiate(m_CatButtonPrefab, transform.position, Quaternion.identity);
             go.transform.SetParent(m_CategoryHolder);
+            go.transform.localScale = Vector3.one;
 
             go.transform.GetChild(0).GetComponent<Image>().sprite = item.BaseIcon;
             go.GetComponent<Button>().onClick.AddListener(delegate () { SpawnItemButtons(item); });
+
+            m_CategoryLookUp.Add(item, go.GetComponent<CategoryButton>());
+            m_CategoryLookUp[item].SetTitle(item.ItemName);
         }
+
+        SpawnItemButtons(m_AllItemCategories[0]);
     }
 
 
     private void SpawnItemButtons(HouseItem itemList)
     {
+        foreach (var category in m_AllItemCategories)
+        {
+            if(category != itemList)
+                m_CategoryLookUp[category].InActive();
+            else
+                m_CategoryLookUp[category].Active();
+        }
+
         foreach (Transform child in m_ItemHolder.transform)
         {
             Destroy(child.gameObject);
