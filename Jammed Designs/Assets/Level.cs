@@ -12,5 +12,6 @@ public class Level : MonoBehaviour
 [System.Serializable]
 public class LevelRequirement
 {
-    [Range(-1,1)] public int Cold, Warm, Rustic, Modern, Retro, Futuristic;
+    [Tooltip("Score to meet or exceed:")]
+    public int Cold, Warm, Rustic, Modern, Retro, Futuristic;
 }

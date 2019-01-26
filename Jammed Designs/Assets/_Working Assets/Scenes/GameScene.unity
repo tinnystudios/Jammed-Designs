@@ -1176,7 +1176,42 @@ Prefab:
     - target: {fileID: 114961548421863054, guid: 3546ff64178d01148b6af31ed480b3a9,
         type: 2}
       propertyPath: ObjectiveMessage
-      value: You were a little Rusty.
+      value: You were a little too rustic and stuck in the past...
+      objectReference: {fileID: 0}
+    - target: {fileID: 114568764474958630, guid: 3546ff64178d01148b6af31ed480b3a9,
+        type: 2}
+      propertyPath: LevelRequirement.Cold
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114568764474958630, guid: 3546ff64178d01148b6af31ed480b3a9,
+        type: 2}
+      propertyPath: LevelRequirement.Warm
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114961548421863054, guid: 3546ff64178d01148b6af31ed480b3a9,
+        type: 2}
+      propertyPath: LevelRequirement.Futuristic
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114961548421863054, guid: 3546ff64178d01148b6af31ed480b3a9,
+        type: 2}
+      propertyPath: LevelRequirement.Rustic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114961548421863054, guid: 3546ff64178d01148b6af31ed480b3a9,
+        type: 2}
+      propertyPath: LevelRequirement.Modern
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114557405124771672, guid: 3546ff64178d01148b6af31ed480b3a9,
+        type: 2}
+      propertyPath: LevelRequirement.Cold
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114064452695764498, guid: 3546ff64178d01148b6af31ed480b3a9,
+        type: 2}
+      propertyPath: LevelRequirement.Retro
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3546ff64178d01148b6af31ed480b3a9, type: 2}

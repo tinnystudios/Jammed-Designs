@@ -75,7 +75,7 @@ public class ScoreManager : MonoBehaviour
                     break;
 
                 case 3:
-                    comment = "Very Rustic";
+                    comment = "Very futuristic!";
                     break;
 
                 case 4:
