@@ -12,6 +12,11 @@ public class GridHighlighter : MonoBehaviour
 
         if (gridNode != null)
         {
+            if (!gridNode.Usable)
+            {
+                IsValid = false;
+            }
+
             if (IsValid)
                 gridNode.Highlight();
             else

@@ -44,7 +44,7 @@ public class ToolBarItem : MonoBehaviour
     {
         var gridNode = GetGridNode;
 
-        if (gridNode != null && gridNode.SelectedItem == null && gridNode.Usable)
+        if (gridNode != null && gridNode.SelectedItem == null && gridNode.Usable && _gridHighlighter.IsValid)
         {
             var itemObject = Instantiate(ItemPrefab, gridNode.Center.position, Quaternion.identity);
             gridNode.AttachItem(itemObject);
