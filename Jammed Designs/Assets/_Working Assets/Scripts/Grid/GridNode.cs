@@ -58,6 +58,13 @@ public class GridNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         SelectedItem = item;
         SetUsabilitity(false);
+        item.Init(this);
+    }
+
+    public void DetachItem(Item item)
+    {
+        SelectedItem = null;
+        SetUsabilitity(true);
     }
 
     public void SetUsabilitity(bool state)

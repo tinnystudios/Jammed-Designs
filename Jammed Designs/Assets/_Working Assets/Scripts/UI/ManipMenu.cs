@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using JammedDesigns.Model;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,7 +14,19 @@ public class ManipMenu : MonoBehaviour {
 
     public void Delete()
     {
+        var item = m_Target.GetComponent<Item>();
+        if (item != null)
+        {
+            item.ConnectedNode.DetachItem(item);
+            var gridZone = item.GetComponentInChildren<GridZoneSensor>(includeInactive: true);
+            if (gridZone != null)
+            {
+                gridZone.ClearNodes();
+            }
+        }
+
         Destroy(m_Target);
+
         cont.ClearMenu();
         print(gameObject);
     }
