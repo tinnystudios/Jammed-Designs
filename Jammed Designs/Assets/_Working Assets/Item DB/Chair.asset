@@ -18,3 +18,11 @@ MonoBehaviour:
     ItemSprite: {fileID: 21300000, guid: e6d35707a8b3a4544825d9319addf92f, type: 3}
     ItemPrefab: {fileID: 114511813955984526, guid: ab75685028b5e2542bb3948340d0fbff,
       type: 2}
+  - ItemName: 
+    ItemSprite: {fileID: 21300000, guid: e6d35707a8b3a4544825d9319addf92f, type: 3}
+    ItemPrefab: {fileID: 114511813955984526, guid: 7e35e050d94972e4b81f441a11e345b2,
+      type: 2}
+  - ItemName: 
+    ItemSprite: {fileID: 21300000, guid: e6d35707a8b3a4544825d9319addf92f, type: 3}
+    ItemPrefab: {fileID: 114511813955984526, guid: 0ab3c2458534fa646ac029d415c3df8f,
+      type: 2}

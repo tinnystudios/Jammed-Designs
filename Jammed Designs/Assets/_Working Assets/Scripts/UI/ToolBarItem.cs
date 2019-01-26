@@ -7,6 +7,8 @@ public class ToolBarItem : MonoBehaviour
 {
     public static Action<GameObject> OnCreateItem;
 
+    public LayerMask NodeLayer;
+
     //Data Structure
     public Item ItemPrefab;
     public Sprite Icon;
@@ -52,6 +54,8 @@ public class ToolBarItem : MonoBehaviour
             var itemObject = Instantiate(ItemPrefab, gridNode.Center.position, Quaternion.identity);
             itemObject.transform.eulerAngles = _gridHighlighter.transform.eulerAngles;
             gridNode.AttachItem(itemObject);
+
+            Debug.Log("Enabling : " + itemObject.transform.GetChild(1).name);
             itemObject.transform.GetChild(1).gameObject.SetActive(true);
         }
 
@@ -132,7 +136,7 @@ public class ToolBarItem : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit, NodeLayer))
             {
                 var gridNode = hit.transform.GetComponentInParent<GridNode>();
                 return gridNode;

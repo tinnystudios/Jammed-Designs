@@ -723,6 +723,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 429453457}
+  - component: {fileID: 429453460}
   m_Layer: 0
   m_Name: UI Canvas
   m_TagString: Untagged
@@ -771,6 +772,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &429453460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429453456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bd3380d277196e47b446e23d249fc85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ManipMenuPrefab: {fileID: 1932167993267060, guid: fde3aa0a47c1d4443b141787a0f10172,
+    type: 2}
+  m_MenuSpawned: {fileID: 180081832}
 --- !u!1 &550633903
 GameObject:
   m_ObjectHideFlags: 0

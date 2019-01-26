@@ -13,4 +13,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Table
   BaseIcon: {fileID: 21300000, guid: 97b0f697ecd531144b302f6d38a48ef2, type: 3}
-  ItemVariants: []
+  ItemVariants:
+  - ItemName: 
+    ItemSprite: {fileID: 21300000, guid: 75bd21a2657dd614cbd745686ed49602, type: 3}
+    ItemPrefab: {fileID: 114511813955984526, guid: e195d6ecd922d484daf5009f0b1c894f,
+      type: 2}
+  - ItemName: 
+    ItemSprite: {fileID: 21300000, guid: e11780384b6eeb746b9fc45b28ba6d91, type: 3}
+    ItemPrefab: {fileID: 114511813955984526, guid: e4a3d3d95d41b73438bdf54881c877df,
+      type: 2}
