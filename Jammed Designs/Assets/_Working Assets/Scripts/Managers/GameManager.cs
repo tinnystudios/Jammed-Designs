@@ -48,10 +48,11 @@ public class GameManager : MonoBehaviour
         Started += StartGame;
 
         LoadScene("UI Overlay", LoadSceneMode.Additive);
+        LoadScene("AudioManager", LoadSceneMode.Additive);
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update ()
     {
 		if(Input.GetKeyDown(KeyCode.Space))
         {

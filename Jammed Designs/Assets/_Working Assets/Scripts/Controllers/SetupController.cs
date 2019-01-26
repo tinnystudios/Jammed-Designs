@@ -80,5 +80,7 @@ public class SetupController : MonoBehaviour
             droppedObject.transform.position = newPos;
             yield return new WaitForEndOfFrame();
         }
+
+        droppedObject.transform.position = StartPoses[index];
     }
 }
