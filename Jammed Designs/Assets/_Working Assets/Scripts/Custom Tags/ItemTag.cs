@@ -6,6 +6,7 @@ public class ItemTag : MonoBehaviour
 {
     public int SenseValue;
     public Tag SensationEvoked;
+    public ItemType TypeOfItem;
 
     [System.Serializable]
     public enum Tag
@@ -16,7 +17,18 @@ public class ItemTag : MonoBehaviour
         Rustic,
         Retro,
         Futuristic,
-        Neutral,
+    };
+
+    [System.Serializable]
+    public enum ItemType
+    {
+        TV,
+        Couch,
+        Chair,
+        Fireplace,
+        Picture,
+        Rug,
+        Table,
     };
 
 }

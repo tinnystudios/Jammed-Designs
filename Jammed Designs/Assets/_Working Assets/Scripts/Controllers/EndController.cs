@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class EndController : MonoBehaviour {
+public class EndController : MonoBehaviour
+{ 
 
 	// Use this for initialization
 	void Start ()
@@ -15,45 +16,91 @@ public class EndController : MonoBehaviour {
     {
         List<ItemTag> itemTags = new List<ItemTag>();
         itemTags = FindObjectsOfType<ItemTag>().ToList();
-       
-        int Warm = 0,
-        Cold = 0,
-        Modern = 0,
-        Rustic = 0,
-        Retro = 0,
-        Futuristic = 0,
-        Neutral = 0;
 
+        ObjectiveManager.Progress CurState = new ObjectiveManager.Progress();
+
+        //get item count
         foreach (var item in itemTags)
         {
-            switch (item.SensationEvoked)
+            if (!CurState.ItemsPresent.ContainsKey((int)item.TypeOfItem))
+            {
+                CurState.ItemsPresent.Add((int)item.TypeOfItem, 1);
+            }
+            else
+            {
+                int curCount = CurState.ItemsPresent[(int)item.TypeOfItem];
+                CurState.ItemsPresent[(int)item.TypeOfItem] = curCount + 1;
+            }
+        }
+
+        //get senses
+        foreach (var item in itemTags)
+        {
+            if (!CurState.SenseValue.ContainsKey((int)item.SensationEvoked))
+            {
+                CurState.SenseValue.Add((int)item.SensationEvoked, item.SenseValue);
+            }
+            else
+            {
+                int curSenseVal = CurState.SenseValue[(int)item.SensationEvoked];
+                CurState.SenseValue[(int)item.SensationEvoked] = curSenseVal + item.SenseValue;
+            }
+        }
+
+        //+ is warm, - is cold
+        Vector2 warm_cold = new Vector2();
+        Vector2 modern_rustic = new Vector2();
+        Vector2 futuristic_retro= new Vector2();
+
+        foreach (var item in CurState.SenseValue)
+        {
+            switch ((ItemTag.Tag)item.Key)
             {
                 case ItemTag.Tag.Warm:
-                    Warm += item.SenseValue;
+                    warm_cold.x = item.Value;
                     break;
                 case ItemTag.Tag.Cold:
-                    Cold += item.SenseValue;
+                    warm_cold.y = item.Value;
                     break;
                 case ItemTag.Tag.Modern:
-                    Modern += item.SenseValue;
+                    modern_rustic.x = item.Value;
                     break;
                 case ItemTag.Tag.Rustic:
-                    Rustic += item.SenseValue;
+                    modern_rustic.y = item.Value;
                     break;
                 case ItemTag.Tag.Retro:
-                    Retro += item.SenseValue;
+                    futuristic_retro.x = item.Value;
                     break;
                 case ItemTag.Tag.Futuristic:
-                    Futuristic += item.SenseValue;
-                    break;
-                case ItemTag.Tag.Neutral:
-                    Neutral += item.SenseValue;
+                    futuristic_retro.y = item.Value;
                     break;
                 default:
                     break;
             }
         }
+        print(ScoreManager.Instance);
+        ScoreManager.Instance.MakeSlider((int)(warm_cold.x - warm_cold.y), "Cold -- Warm");
+        ScoreManager.Instance.MakeSlider((int)(modern_rustic.x - modern_rustic.y), "Rustic -- Modern");
+        ScoreManager.Instance.MakeSlider((int)(futuristic_retro.x - futuristic_retro.y), "Retro -- Futuristic");
 
-        print(string.Format("Warm: {0} Cold: {1} Modern: {2} Rustic: {3} Retro: {4} Futuristic: {5} Neutral: {6}", Warm, Cold, Modern, Rustic, Retro, Futuristic, Neutral));
+        foreach (var item in ObjectiveManager.Instance.curObjective.ItemsToHave)
+        {
+            int curCount = 0, numWanted = 0;
+            string text = "";
+            numWanted = item.Needed;
+            text = item.type.ToString();
+
+            foreach (var dict in CurState.ItemsPresent)
+            {
+                if((ItemTag.ItemType)dict.Key == item.type)
+                {
+                    curCount = dict.Value;
+                    break;
+                }
+            }
+
+            ScoreManager.Instance.MakeCheckbox(curCount, numWanted, text);
+        }
+        
     }
 }
