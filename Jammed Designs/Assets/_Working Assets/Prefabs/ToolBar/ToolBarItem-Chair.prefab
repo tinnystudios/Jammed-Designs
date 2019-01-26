@@ -168,6 +168,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b41fa5090824b984b8b252242d52faf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NodeLayer:
+    serializedVersion: 2
+    m_Bits: 512
   ItemPrefab: {fileID: 114511813955984526, guid: ab75685028b5e2542bb3948340d0fbff,
     type: 2}
   Icon: {fileID: 21300000, guid: e6d35707a8b3a4544825d9319addf92f, type: 3}
@@ -175,6 +178,7 @@ MonoBehaviour:
   Thumbnail: {fileID: 114583706210901156}
   GridHighlighterPrefab: {fileID: 114480608941924634, guid: baf951874a965df4bbe5d1853a3b9fac,
     type: 2}
+  ghost: {fileID: 0}
 --- !u!222 &222170252280208680
 CanvasRenderer:
   m_ObjectHideFlags: 1

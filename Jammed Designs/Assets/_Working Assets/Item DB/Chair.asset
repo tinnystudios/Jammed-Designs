@@ -14,7 +14,11 @@ MonoBehaviour:
   ItemName: Chair
   BaseIcon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   ItemVariants:
-  - ItemName: 
+  - ItemDescription: 
     ItemSprite: {fileID: 21300000, guid: e6d35707a8b3a4544825d9319addf92f, type: 3}
-    ItemPrefab: {fileID: 114511813955984526, guid: ab75685028b5e2542bb3948340d0fbff,
+    ItemPrefab: {fileID: 114055462023415032, guid: 1ccf6d5ec3f03894c8d9dbdf2000a812,
+      type: 2}
+  - ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: e6d35707a8b3a4544825d9319addf92f, type: 3}
+    ItemPrefab: {fileID: 114597006858572104, guid: 3723bfcec9a079648874c9187ef7eca1,
       type: 2}

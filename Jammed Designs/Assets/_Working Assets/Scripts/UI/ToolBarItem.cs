@@ -7,6 +7,8 @@ public class ToolBarItem : MonoBehaviour
 {
     public static Action<GameObject> OnCreateItem;
 
+    public LayerMask NodeLayer;
+
     //Data Structure
     public Item ItemPrefab;
     public Sprite Icon;
@@ -52,7 +54,10 @@ public class ToolBarItem : MonoBehaviour
             var itemObject = Instantiate(ItemPrefab, gridNode.Center.position, Quaternion.identity);
             itemObject.transform.eulerAngles = _gridHighlighter.transform.eulerAngles;
             gridNode.AttachItem(itemObject);
+
+            Debug.Log("Enabling : " + itemObject.transform.GetChild(1).name);
             itemObject.transform.GetChild(1).gameObject.SetActive(true);
+            itemObject.GetComponent<Collider>().enabled = true;
         }
 
         // #TODO Refactor
@@ -63,13 +68,15 @@ public class ToolBarItem : MonoBehaviour
         }
 
         // #TODO Refactor after merging
-        Destroy(_gridHighlighter);
+        Destroy(_gridHighlighter.gameObject);
+        Destroy(ghost);
     }
 
     public void Update()
     {
         if(Input.GetKeyDown(KeyCode.R))
         {
+            if(_gridHighlighter != null)
             _gridHighlighter.transform.eulerAngles += new Vector3(0, 90, 0);
         }
 
@@ -91,8 +98,8 @@ public class ToolBarItem : MonoBehaviour
         _gridHighlighter.transform.rotation = itemPrefabZoneSensor.transform.rotation;
         _gridHighlighter.transform.localScale = itemPrefabZoneSensor.transform.localScale;
 
-
-        ghost = Instantiate(ItemPrefab.gameObject, _gridHighlighter.transform.position, Quaternion.identity);
+        ghost = Instantiate(ItemPrefab.gameObject, _gridHighlighter.transform.position, _gridHighlighter.transform.rotation);
+        //remove the highligheter from the ghost
 
         _gridHighlighter.gameObject.SetActive(true);
     }
@@ -111,8 +118,8 @@ public class ToolBarItem : MonoBehaviour
             _selectedGridNode = gridNode;
             _gridHighlighter.IsValid = gridNode.Usable;
             _gridHighlighter.transform.position = gridNode.Center.position;
-            //Set size
 
+            var itemPrefabZoneSensor = ItemPrefab.GetComponentInChildren<GridZoneSensor>(includeInactive: true);
 
             if (gridNode.Usable)
             {
@@ -132,7 +139,7 @@ public class ToolBarItem : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit, NodeLayer))
             {
                 var gridNode = hit.transform.GetComponentInParent<GridNode>();
                 return gridNode;
