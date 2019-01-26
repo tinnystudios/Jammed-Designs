@@ -60,7 +60,7 @@ public class ItemUIManager : MonoBehaviour {
         {
             var go = Instantiate(m_ItemButtonPrefab, transform.position, Quaternion.identity);
             go.transform.SetParent(m_ItemHolder);
-
+            go.transform.localScale = Vector3.one;
             go.transform.GetChild(0).GetComponent<Image>().sprite = item.ItemSprite;
 
             var toolBar = go.GetComponent<ToolBarItem>();
