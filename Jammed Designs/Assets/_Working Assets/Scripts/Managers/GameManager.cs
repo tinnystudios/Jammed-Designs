@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-		if(Input.GetKeyDown(KeyCode.Space))
+		if(Input.anyKeyDown && !_started)
         {
             SetupGame();
         }
@@ -78,6 +78,7 @@ public class GameManager : MonoBehaviour
 
     public void SetupGame()
     {
+        _started = true;
         CurrentState = SystemState.SettingUp;
 
         if (SettingUp != null)
@@ -149,4 +150,5 @@ public class GameManager : MonoBehaviour
     }
 
     private float elapsedTime;
+    private bool _started = false;
 }

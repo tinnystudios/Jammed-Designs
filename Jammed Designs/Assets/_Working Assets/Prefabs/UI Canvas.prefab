@@ -5448,7 +5448,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: PRESS SPACE TO START
+  m_text: PRESS ANY KEY
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5516,10 +5516,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 114872738871549386}
-    characterCount: 20
+    characterCount: 13
     spriteCount: 0
-    spaceCount: 3
-    wordCount: 4
+    spaceCount: 2
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -6788,12 +6788,12 @@ RectTransform:
   - {fileID: 224125900922511142}
   - {fileID: 224224087387374304}
   m_Father: {fileID: 224597817746440214}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 203.61638, y: -34.391212}
-  m_SizeDelta: {x: 99.41091, y: 68.782425}
+  m_AnchoredPosition: {x: 110.6783, y: -47.809425}
+  m_SizeDelta: {x: 221.3566, y: 95.61885}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224155793117257126
 RectTransform:
@@ -6867,12 +6867,12 @@ RectTransform:
   - {fileID: 224542089237860236}
   - {fileID: 224493305726831004}
   m_Father: {fileID: 224597817746440214}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 49.705456, y: -34.391212}
-  m_SizeDelta: {x: 99.41091, y: 68.782425}
+  m_AnchoredPosition: {x: 386.5349, y: -47.809425}
+  m_SizeDelta: {x: 221.3566, y: 95.61885}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224205811206141730
 RectTransform:
@@ -7741,15 +7741,15 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 224199903407244220}
   - {fileID: 224141070334907478}
+  - {fileID: 224199903407244220}
   m_Father: {fileID: 224106615539519694}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00012207031, y: -93.925}
-  m_SizeDelta: {x: -243.79, y: -223.7}
+  m_AnchorMax: {x: 1, y: 0.32223338}
+  m_AnchoredPosition: {x: 0.0009765625, y: 0.7000122}
+  m_SizeDelta: {x: -0, y: 1.3999939}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224607994889218212
 RectTransform:

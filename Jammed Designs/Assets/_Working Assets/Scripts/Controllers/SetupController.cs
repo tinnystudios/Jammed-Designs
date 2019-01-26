@@ -54,7 +54,7 @@ public class SetupController : MonoBehaviour
 
     private IEnumerator DropItems()
     {
-        AudioManager.Instance.PlayDomino();
+ 
 
         for (int i = 0; i < m_FloorTiles.Count; i++)
         {
