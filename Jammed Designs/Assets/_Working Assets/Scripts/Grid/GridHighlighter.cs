@@ -9,6 +9,10 @@ public class GridHighlighter : MonoBehaviour
     private void OnTriggerStay(Collider col)
     {
         var gridNode = col.GetComponentInParent<GridNode>();
+        var nodeBlocker = col.GetComponentInParent<NodeBlocker>();
+
+        if (nodeBlocker != null)
+            IsValid = false;
 
         if (gridNode != null)
         {
