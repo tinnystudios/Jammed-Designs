@@ -658,5 +658,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SenseValue: 3
-  SensationEvoked: 0
+  SensationEvoked: 3
   TypeOfItem: 6

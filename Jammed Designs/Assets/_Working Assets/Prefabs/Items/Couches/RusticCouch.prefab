@@ -1143,8 +1143,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SenseValue: 3
-  SensationEvoked: 0
-  TypeOfItem: 6
+  SensationEvoked: 3
+  TypeOfItem: 1
 --- !u!114 &114127262333791826
 MonoBehaviour:
   m_ObjectHideFlags: 1

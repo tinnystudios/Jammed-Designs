@@ -47,6 +47,7 @@ public class EndController : MonoBehaviour
             }
         }
 
+
         //+ is warm, - is cold
         Vector2 warm_cold = new Vector2();
         Vector2 modern_rustic = new Vector2();
@@ -78,10 +79,19 @@ public class EndController : MonoBehaviour
                     break;
             }
         }
-        print(ScoreManager.Instance);
+
         ScoreManager.Instance.MakeSlider((int)(warm_cold.x - warm_cold.y), "Cold -- Warm");
         ScoreManager.Instance.MakeSlider((int)(modern_rustic.x - modern_rustic.y), "Rustic -- Modern");
         ScoreManager.Instance.MakeSlider((int)(futuristic_retro.x - futuristic_retro.y), "Retro -- Futuristic");
+
+        var coldWarm = (warm_cold.x - warm_cold.y) / 10;
+        var modernRustic =(modern_rustic.x - modern_rustic.y) / 10;
+        var futuristicRetro = (futuristic_retro.x - futuristic_retro.y) / 10;
+
+        Debug.Log("Cold-Warm : " + coldWarm);
+
+        var success = LevelManager.Instance.IsLevelSuccess(coldWarm, modernRustic, futuristicRetro);
+        Debug.Log("Success : " + success);
 
         foreach (var item in ObjectiveManager.Instance.curObjective.ItemsToHave)
         {
