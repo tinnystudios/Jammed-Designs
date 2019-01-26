@@ -13,7 +13,8 @@ public class ToolBarItemButton : MonoBehaviour, IDragHandler, IEndDragHandler, I
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        ToolBarItem.Thumbnail.enabled = true;
+        //ToolBarItem.Thumbnail.enabled = true;
+        ToolBarItem.SetupHighlight();
     }
 
     public void OnDrag(PointerEventData eventData)

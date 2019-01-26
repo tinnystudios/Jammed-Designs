@@ -14,11 +14,6 @@ public class GridNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public Color HighlightColor = Color.blue;
     public Color DefaultColor = Color.white;
 
-    void OnValidate()
-    {
-        Center = transform;
-    }
-
     public bool Usable
     {
         get

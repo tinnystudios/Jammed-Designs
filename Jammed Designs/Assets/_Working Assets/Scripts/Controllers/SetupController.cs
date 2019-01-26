@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SetupController : MonoBehaviour
 {
+    [SerializeField] private ItemGridGenerator m_GridGen;
     [SerializeField] private List<GameObject> m_FloorTiles;
     private List<Vector3> m_FloorTilesStartPos;
     [SerializeField] private List<GameObject> m_Walls;
@@ -16,6 +17,9 @@ public class SetupController : MonoBehaviour
         GameManager.Instance.SettingUp += SettingUpGame;
         m_FloorTilesStartPos = new List<Vector3>();
         m_WallsStartPos = new List<Vector3>();
+
+        m_FloorTiles = m_GridGen.GenerateGrid();
+
 
         foreach (var item in m_FloorTiles)
         {
@@ -33,6 +37,8 @@ public class SetupController : MonoBehaviour
 	
     private void SettingUpGame()
     {
+       
+
         StartCoroutine(DropItems());
     }
 
