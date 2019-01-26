@@ -12,5 +12,25 @@ MonoBehaviour:
   m_Name: Bookcase
   m_EditorClassIdentifier: 
   ItemName: Bookcase
-  BaseIcon: {fileID: 21300000, guid: 97b0f697ecd531144b302f6d38a48ef2, type: 3}
-  ItemVariants: []
+  BaseIcon: {fileID: 21300000, guid: 1c12506e4feb3164db5f7a63d0fe4300, type: 3}
+  ItemVariants:
+  - ItemDescription: Black Shelf
+    ItemSprite: {fileID: 21300000, guid: b4feda7d675053f41afa1351fee1cc83, type: 3}
+    ItemPrefab: {fileID: 114636268552628586, guid: 99a29f644ca26704da8a91387f0ea1bd,
+      type: 2}
+  - ItemDescription: Dark Brown Shelf
+    ItemSprite: {fileID: 21300000, guid: f45ce71d5a0c7a145bb9c51774b390b2, type: 3}
+    ItemPrefab: {fileID: 114722232045468920, guid: d937281b71df66d4aad38cb185a5eea1,
+      type: 2}
+  - ItemDescription: Gray Shelf
+    ItemSprite: {fileID: 21300000, guid: 1c12506e4feb3164db5f7a63d0fe4300, type: 3}
+    ItemPrefab: {fileID: 114094547981339962, guid: 7d80fab5de27ab54bb0b55032ddf0160,
+      type: 2}
+  - ItemDescription: Maroon Shelf
+    ItemSprite: {fileID: 21300000, guid: b885add501f84a3438fc823ae3fde774, type: 3}
+    ItemPrefab: {fileID: 114198783617067488, guid: fb8295a0f5810e04dac448caf8eaefb9,
+      type: 2}
+  - ItemDescription: Woody Shelf
+    ItemSprite: {fileID: 21300000, guid: b4ce5107901fd794aa3ba3942dc0ffbf, type: 3}
+    ItemPrefab: {fileID: 114059195132802440, guid: 9d4043d30e0826d4ab4429d183ce3599,
+      type: 2}

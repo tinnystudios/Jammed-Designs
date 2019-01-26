@@ -2,7 +2,7 @@
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(ToolBarItem))]
-public class ToolBarItemButton : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
+public class ToolBarItemButton : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler, IPointerDownHandler
 {
     [SerializeField] private ToolBarItem ToolBarItem;
 
@@ -29,6 +29,11 @@ public class ToolBarItemButton : MonoBehaviour, IDragHandler, IEndDragHandler, I
         ToolBarItem.Thumbnail.enabled = false;
 
         ToolBarItem.CreateItem();
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        //AudioManager.Instance.PlayClick();
     }
 
     private Vector3 MousePositionToCanvasWorld

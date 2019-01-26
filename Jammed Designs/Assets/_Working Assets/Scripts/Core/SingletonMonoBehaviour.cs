@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class SingletonMonoBehaviour<T> : MonoBehaviour where T : MonoBehaviour
 {
+    public bool DontDestroyObjectOnLoad = false;
+
     protected virtual void Awake()
     {
         if (_instance != null && _instance != this)
             Destroy(gameObject);
 
         _instance = this as T;
+
+        if (DontDestroyObjectOnLoad)
+        {
+            transform.SetParent(null);
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
     public static T Instance

@@ -47,6 +47,7 @@ public class EndController : MonoBehaviour
             }
         }
 
+
         //+ is warm, - is cold
         Vector2 warm_cold = new Vector2();
         Vector2 modern_rustic = new Vector2();
@@ -69,19 +70,31 @@ public class EndController : MonoBehaviour
                     modern_rustic.y = item.Value;
                     break;
                 case ItemTag.Tag.Retro:
-                    futuristic_retro.x = item.Value;
+                    futuristic_retro.y = item.Value;
                     break;
                 case ItemTag.Tag.Futuristic:
-                    futuristic_retro.y = item.Value;
+                    futuristic_retro.x = item.Value;
                     break;
                 default:
                     break;
             }
         }
-        print(ScoreManager.Instance);
+
         ScoreManager.Instance.MakeSlider((int)(warm_cold.x - warm_cold.y), "Cold -- Warm");
         ScoreManager.Instance.MakeSlider((int)(modern_rustic.x - modern_rustic.y), "Rustic -- Modern");
         ScoreManager.Instance.MakeSlider((int)(futuristic_retro.x - futuristic_retro.y), "Retro -- Futuristic");
+
+        var coldWarm = (warm_cold.x - warm_cold.y);
+        var modernRustic =(modern_rustic.x - modern_rustic.y);
+        var futuristicRetro = (futuristic_retro.x - futuristic_retro.y);
+
+        var success = LevelManager.Instance.IsLevelSuccess(warm_cold, modern_rustic, futuristic_retro);
+        Debug.Log("Success : " + success);
+
+        ScoreManager.Instance.UpdateNextMenuBoard(success);
+
+        if(success)
+            LevelManager.Instance.IncreaseLevel();
 
         foreach (var item in ObjectiveManager.Instance.curObjective.ItemsToHave)
         {

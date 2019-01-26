@@ -10,10 +10,14 @@ public class SetupController : MonoBehaviour
     [SerializeField] private List<GameObject> m_Walls;
     private List<Vector3> m_WallsStartPos;
     [SerializeField] private AnimationCurve m_DropCurve;
+    public Character Character;
 
     // Use this for initialization
     void Start ()
     {
+        Character.gameObject.SetActive(false);
+        Dialouge.Instance.Hide();
+
         GameManager.Instance.SettingUp += SettingUpGame;
         m_FloorTilesStartPos = new List<Vector3>();
         m_WallsStartPos = new List<Vector3>();
@@ -37,8 +41,6 @@ public class SetupController : MonoBehaviour
 	
     private void SettingUpGame()
     {
-       
-
         StartCoroutine(DropItems());
     }
 
@@ -52,18 +54,27 @@ public class SetupController : MonoBehaviour
 
     private IEnumerator DropItems()
     {
+        AudioManager.Instance.PlayDomino();
+
         for (int i = 0; i < m_FloorTiles.Count; i++)
         {
             StartCoroutine(DropRoutine(m_FloorTiles[i], i, m_FloorTilesStartPos));
-            yield return new WaitForSeconds(5f / m_FloorTiles.Count);
+            yield return new WaitForSeconds(1f / m_FloorTiles.Count);
         }
 
         for (int i = 0; i < m_Walls.Count; i++)
         {
             StartCoroutine(DropRoutine(m_Walls[i], i, m_WallsStartPos));
-            yield return new WaitForSeconds(5f / m_FloorTiles.Count);
+            yield return new WaitForSeconds(2.5f / m_FloorTiles.Count);
         }
 
+        yield return RunDialouge();
+    }
+
+    private IEnumerator RunDialouge()
+    {
+        Character.gameObject.SetActive(true);
+        yield return Dialouge.Instance.Run();
         StartGame();
     }
 
@@ -80,5 +91,7 @@ public class SetupController : MonoBehaviour
             droppedObject.transform.position = newPos;
             yield return new WaitForEndOfFrame();
         }
+
+        droppedObject.transform.position = StartPoses[index];
     }
 }

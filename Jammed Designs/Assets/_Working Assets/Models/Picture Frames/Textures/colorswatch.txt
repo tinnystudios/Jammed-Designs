@@ -1,0 +1,6 @@
+WARM- 223, 46, 9 
+COLD - 78, 54, 120
+MODERN - 18, 21, 25
+RUSTIC - 84, 11, 12
+FUTURISTIC - 0, 249, 255 (translucence 0.271)
+RETRO - 255, 72, 196

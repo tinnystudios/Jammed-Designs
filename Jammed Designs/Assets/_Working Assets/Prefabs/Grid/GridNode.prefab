@@ -156,5 +156,5 @@ MonoBehaviour:
   SelectedItem: {fileID: 0}
   Center: {fileID: 4574549560015850}
   InvalidColor: {r: 1, g: 0, b: 0, a: 1}
-  HighlightColor: {r: 0, g: 0, b: 1, a: 1}
-  DefaultColor: {r: 1, g: 1, b: 1, a: 1}
+  HighlightColor: {r: 0.6087902, g: 0.7830189, b: 0.18836774, a: 1}
+  DefaultColor: {r: 0.9254902, g: 0.88235295, b: 0.67058825, a: 1}

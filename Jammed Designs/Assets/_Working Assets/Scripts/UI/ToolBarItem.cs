@@ -48,6 +48,7 @@ public class ToolBarItem : MonoBehaviour
     public void CreateItem()
     {
         var gridNode = GetGridNode;
+        bool created = false;
 
         if (gridNode != null && gridNode.SelectedItem == null && gridNode.Usable && _gridHighlighter.IsValid)
         {
@@ -58,6 +59,7 @@ public class ToolBarItem : MonoBehaviour
             Debug.Log("Enabling : " + itemObject.transform.GetChild(1).name);
             itemObject.transform.GetChild(1).gameObject.SetActive(true);
             itemObject.GetComponent<Collider>().enabled = true;
+            created = true;
         }
 
         // #TODO Refactor
@@ -70,6 +72,15 @@ public class ToolBarItem : MonoBehaviour
         // #TODO Refactor after merging
         Destroy(_gridHighlighter.gameObject);
         Destroy(ghost);
+
+        if (created)
+        {
+            AudioManager.Instance.PlaySelect();
+        }
+        else
+        {
+            AudioManager.Instance.PlayError();
+        }
     }
 
     public void Update()

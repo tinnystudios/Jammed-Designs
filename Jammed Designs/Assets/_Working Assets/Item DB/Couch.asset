@@ -12,9 +12,29 @@ MonoBehaviour:
   m_Name: Couch
   m_EditorClassIdentifier: 
   ItemName: Couch
-  BaseIcon: {fileID: 21300000, guid: 97b0f697ecd531144b302f6d38a48ef2, type: 3}
+  BaseIcon: {fileID: 21300000, guid: 1c12506e4feb3164db5f7a63d0fe4300, type: 3}
   ItemVariants:
-  - ItemName: 
-    ItemSprite: {fileID: 21300000, guid: 75bd21a2657dd614cbd745686ed49602, type: 3}
-    ItemPrefab: {fileID: 114038284638390246, guid: d44f2f4c013551e45877528dd1d55333,
+  - ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: 019ad42a84e9b7548b19fcdda5e6312d, type: 3}
+    ItemPrefab: {fileID: 114515747336748162, guid: b3d590958c708be42afb7efb3a300749,
+      type: 2}
+  - ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: 80adac47c13bc54409e978349ca83886, type: 3}
+    ItemPrefab: {fileID: 114010297335642856, guid: 9ef8c9f4a7aaf8c428dc3c0631c23193,
+      type: 2}
+  - ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: 4910833ad6bfab4489fb60e0a6f9738d, type: 3}
+    ItemPrefab: {fileID: 114941697602760380, guid: 7304aea565f694d48a6536c98c692c9f,
+      type: 2}
+  - ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: 096cdeb47f944584bb0dbe807208257c, type: 3}
+    ItemPrefab: {fileID: 114597193846133148, guid: 6bf0a71d35981c9408ed6abb1b97f589,
+      type: 2}
+  - ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: ea2e723d0760309468a89be82efdc5c7, type: 3}
+    ItemPrefab: {fileID: 114939129480318522, guid: df140485d15025640b094482861ffff9,
+      type: 2}
+  - ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: 52565dd54b9560a43ab0d0cc6f218daa, type: 3}
+    ItemPrefab: {fileID: 114608174374198774, guid: 169baa959e8f17f4984f539a95bd30cd,
       type: 2}
