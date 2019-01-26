@@ -67,7 +67,8 @@ public class ToolBarItem : MonoBehaviour
         }
 
         // #TODO Refactor after merging
-        Destroy(_gridHighlighter);
+        Destroy(_gridHighlighter.gameObject);
+        Destroy(ghost.gameObject);
     }
 
     public void Update()
