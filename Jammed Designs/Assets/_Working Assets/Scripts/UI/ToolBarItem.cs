@@ -57,6 +57,7 @@ public class ToolBarItem : MonoBehaviour
 
             Debug.Log("Enabling : " + itemObject.transform.GetChild(1).name);
             itemObject.transform.GetChild(1).gameObject.SetActive(true);
+            itemObject.GetComponent<Collider>().enabled = true;
         }
 
         // #TODO Refactor

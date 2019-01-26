@@ -14,7 +14,8 @@ public class GameManager : MonoBehaviour
 
     [Header("Game State:")]
     public SystemState CurrentState;
-
+    [Space]
+    public LayerMask clickableLayer;
 
     [System.Serializable]
     public enum SystemState
@@ -56,7 +57,7 @@ public class GameManager : MonoBehaviour
         {
             SetupGame();
         }
-	}
+    }
 
     public void SetupGame()
     {

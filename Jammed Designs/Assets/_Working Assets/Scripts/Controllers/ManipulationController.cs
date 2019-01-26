@@ -7,6 +7,7 @@ public class ManipulationController : MonoBehaviour
     [SerializeField] GameObject m_ManipMenuPrefab;
     [SerializeField] Transform m_MenuSpawned;
     [SerializeField] GameObject m_ManipMenu;
+    public LayerMask clickableLayer;
     // Use this for initialization
     void Start () {
         GameManager.Instance.Ended += ClearMenu;
@@ -21,7 +22,7 @@ public class ManipulationController : MonoBehaviour
         Debug.DrawRay(ray.origin, ray.direction * 100f, Color.green);
 
 
-        if (Physics.Raycast(ray, out hit, 100f))
+        if (Physics.Raycast(ray, out hit, 100f, clickableLayer))
         {
             if (hit.collider.GetComponent<JammedDesigns.Model.Item>())
             {
