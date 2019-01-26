@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -44,6 +45,8 @@ public class GameManager : MonoBehaviour
     void Start ()
     {
         Started += StartGame;
+
+        LoadScene("UI Overlay", LoadSceneMode.Additive);
     }
 	
 	// Update is called once per frame
@@ -105,8 +108,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void ResetGame()
+    private void LoadScene(string sceneToLoad, LoadSceneMode mode)
     {
-        NormalizedTime = 0;
+        StartCoroutine(LoadSceneAsync(sceneToLoad, mode));
+    }
+
+    private IEnumerator LoadSceneAsync(string sceneToLoad, LoadSceneMode mode)
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneToLoad,mode);
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
     }
 }

@@ -16,12 +16,6 @@ public class SetupController : MonoBehaviour
         GameManager.Instance.SettingUp += SettingUpGame;
         m_FloorTilesStartPos = new List<Vector3>();
         m_WallsStartPos = new List<Vector3>();
-    }
-	
-	
-    private void SettingUpGame()
-    {
-        print("Game has started");
 
         foreach (var item in m_FloorTiles)
         {
@@ -34,7 +28,11 @@ public class SetupController : MonoBehaviour
             m_WallsStartPos.Add(item.transform.position);
             item.transform.position += new Vector3(0, 20, 0);
         }
-
+    }
+	
+	
+    private void SettingUpGame()
+    {
         StartCoroutine(DropItems());
     }
 
