@@ -9,9 +9,7 @@ public class ItemVariant : MonoBehaviour
     {
         public string ItemName;
         public Sprite ItemSprite;
-        public GameObject ItemPrefab;
+        public JammedDesigns.Model.Item ItemPrefab;
     }
-
-
     
 }

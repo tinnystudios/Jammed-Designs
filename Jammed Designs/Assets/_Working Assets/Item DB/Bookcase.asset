@@ -16,7 +16,9 @@ MonoBehaviour:
   ItemVariants:
   - ItemName: 
     ItemSprite: {fileID: 21300000, guid: 97b0f697ecd531144b302f6d38a48ef2, type: 3}
-    ItemPrefab: {fileID: 0}
+    ItemPrefab: {fileID: 114038284638390246, guid: d44f2f4c013551e45877528dd1d55333,
+      type: 2}
   - ItemName: 
     ItemSprite: {fileID: 21300000, guid: 75bd21a2657dd614cbd745686ed49602, type: 3}
-    ItemPrefab: {fileID: 0}
+    ItemPrefab: {fileID: 114038284638390246, guid: d44f2f4c013551e45877528dd1d55333,
+      type: 2}
