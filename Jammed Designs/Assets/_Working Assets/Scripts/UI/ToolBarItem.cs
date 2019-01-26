@@ -17,6 +17,8 @@ public class ToolBarItem : MonoBehaviour
 
     public GridHighlighter GridHighlighterPrefab;
 
+    public GameObject ghost;
+
     //Once it's all hooked up, we won't need this.
     private void Awake()
     {
@@ -48,7 +50,9 @@ public class ToolBarItem : MonoBehaviour
         if (gridNode != null && gridNode.SelectedItem == null && gridNode.Usable && _gridHighlighter.IsValid)
         {
             var itemObject = Instantiate(ItemPrefab, gridNode.Center.position, Quaternion.identity);
+            itemObject.transform.eulerAngles = _gridHighlighter.transform.eulerAngles;
             gridNode.AttachItem(itemObject);
+            itemObject.transform.GetChild(1).gameObject.SetActive(true);
         }
 
         // #TODO Refactor
@@ -60,6 +64,37 @@ public class ToolBarItem : MonoBehaviour
 
         // #TODO Refactor after merging
         Destroy(_gridHighlighter);
+    }
+
+    public void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            _gridHighlighter.transform.eulerAngles += new Vector3(0, 90, 0);
+        }
+
+        if (ghost != null && _gridHighlighter != null)
+        {
+            ghost.transform.position = _gridHighlighter.transform.position;
+            ghost.transform.eulerAngles = _gridHighlighter.transform.eulerAngles;
+        }
+    }
+
+    public void SetupHighlight()
+    {
+        var gridNode = GetGridNode;
+        var itemPrefabZoneSensor = ItemPrefab.GetComponentInChildren<GridZoneSensor>(includeInactive: true);
+
+        if (_gridHighlighter == null)
+            _gridHighlighter = Instantiate(GridHighlighterPrefab);
+
+        _gridHighlighter.transform.rotation = itemPrefabZoneSensor.transform.rotation;
+        _gridHighlighter.transform.localScale = itemPrefabZoneSensor.transform.localScale;
+
+
+        ghost = Instantiate(ItemPrefab.gameObject, _gridHighlighter.transform.position, Quaternion.identity);
+
+        _gridHighlighter.gameObject.SetActive(true);
     }
 
     public void TryHighlightGrid()
@@ -74,19 +109,10 @@ public class ToolBarItem : MonoBehaviour
             }
 
             _selectedGridNode = gridNode;
-
-            //Set size
-            var itemPrefabZoneSensor = ItemPrefab.GetComponentInChildren<GridZoneSensor>();
-
-            if(_gridHighlighter == null)
-                _gridHighlighter = Instantiate(GridHighlighterPrefab);
-
-            _gridHighlighter.transform.rotation = itemPrefabZoneSensor.transform.rotation;
-            _gridHighlighter.transform.localScale = itemPrefabZoneSensor.transform.localScale;
-            _gridHighlighter.transform.position = gridNode.Center.position;
             _gridHighlighter.IsValid = gridNode.Usable;
+            _gridHighlighter.transform.position = gridNode.Center.position;
+            //Set size
 
-            _gridHighlighter.gameObject.SetActive(true);
 
             if (gridNode.Usable)
             {

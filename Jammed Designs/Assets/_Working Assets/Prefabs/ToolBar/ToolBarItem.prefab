@@ -82,6 +82,7 @@ MonoBehaviour:
   Thumbnail: {fileID: 114697421189674738}
   GridHighlighterPrefab: {fileID: 114480608941924634, guid: baf951874a965df4bbe5d1853a3b9fac,
     type: 2}
+  ghost: {fileID: 0}
 --- !u!114 &114495922363798794
 MonoBehaviour:
   m_ObjectHideFlags: 1
