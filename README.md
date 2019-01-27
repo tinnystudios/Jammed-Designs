@@ -15,7 +15,7 @@ Place object and modify unique properties to match client’s brief.
 Puzzle, explorative
 
 ## Theme
-Hidden :D
+Home
 
 ## Moral - Underlying message
-People all have different values!
+Everyone has a different definition of home
